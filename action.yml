@@ -1,0 +1,17 @@
+name: 'Readme Action Template'
+author: ganariya
+description: 'Hello, this is template!'
+
+inputs:
+  GH_TOKEN:
+    description: 'GitHub access token with Repo scope'
+    required: true
+    default: ${{ github.token }}
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'activity'
+  color: 'orange'
