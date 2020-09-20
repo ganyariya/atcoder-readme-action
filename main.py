@@ -13,8 +13,6 @@ load_dotenv()
 
 START_COMMENT = '<!--START_SECTION:action-->'
 END_COMMENT = '<!--END_SECTION:action-->'
-START_COMMENT = '<!--START_SECTION:waka-->'
-END_COMMENT = '<!--END_SECTION:waka-->'
 LIST_REG = f"{START_COMMENT}[\\s\\S]+{END_COMMENT}"
 gh_token = os.getenv('INPUT_GH_TOKEN')
 
@@ -37,7 +35,8 @@ if __name__ == '__main__':
             raise Exception('Token not available')
         github = Github(gh_token)
         username = "Ganariya"
-        repo = github.get_repo(f"{username}/{username}")
+        # repo = github.get_repo(f"{username}/{username}")
+        repo = github.get_repo(f"Ganariya/test-action")
         readme_contents = repo.get_readme()
         readme_blob = readme_contents.content
         old_readme_text = get_readme_content_as_text(readme_blob)
@@ -48,7 +47,7 @@ if __name__ == '__main__':
         new_readme_text = generate_new_readme(insert_text, old_readme_text)
         committer = InputGitAuthor('readme-bot', 'readme-bot@example.com')
 
-        # repo.update_file(path=readme_contents.path, message="Updated README by bot", content=new_readme_text, sha=readme_contents.sha, branch='master', committer=committer)
+        repo.update_file(path=readme_contents.path, message="Updated README by bot", content=new_readme_text, sha=readme_contents.sha, branch='master', committer=committer)
         print("Readme Updated!")
 
     except Exception as e:
