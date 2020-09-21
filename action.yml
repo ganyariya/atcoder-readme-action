@@ -10,6 +10,9 @@ inputs:
   USERNAME:
     description: 'Your Account'
     required: true
+  ATCODER_ACCOUNT:
+    description: 'Your AtCoder Account'
+    required: true
 
 runs:
   using: 'docker'

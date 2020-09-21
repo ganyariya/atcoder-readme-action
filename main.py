@@ -17,6 +17,7 @@ UPDATE_REG = f"{START_COMMENT}[\\s\\S]+{END_COMMENT}"
 
 GH_TOKEN = os.getenv('INPUT_GH_TOKEN')
 USERNAME = os.getenv('INPUT_USERNAME')
+ATCODER_ACCOUNT = os.getenv('INPUT_ATCODER_ACCOUNT')
 
 
 def get_readme_content_as_text(data: str):
@@ -40,7 +41,7 @@ if __name__ == '__main__':
         old_readme_text = get_readme_content_as_text(readme_blob)
 
         # this is the text which we want to insert!
-        insert_text = make_insert_text()
+        insert_text = make_insert_text(ATCODER_ACCOUNT)
 
         new_readme_text = generate_new_readme(insert_text, old_readme_text)
         committer = InputGitAuthor('readme-bot', 'readme-bot@example.com')
