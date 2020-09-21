@@ -13,7 +13,7 @@ load_dotenv()
 
 START_COMMENT = '<!--START_SECTION:custom_action-->'
 END_COMMENT = '<!--END_SECTION:custom_action-->'
-LIST_REG = f"{START_COMMENT}[\\s\\S]+{END_COMMENT}"
+UPDATE_REG = f"{START_COMMENT}[\\s\\S]+{END_COMMENT}"
 
 GH_TOKEN = os.getenv('INPUT_GH_TOKEN')
 USERNAME = os.getenv('INPUT_USERNAME')
@@ -26,7 +26,7 @@ def get_readme_content_as_text(data: str):
 
 def generate_new_readme(new_text: str, readme: str):
     stats_in_readme = f"{START_COMMENT}\n{new_text}\n{END_COMMENT}"
-    return re.sub(LIST_REG, stats_in_readme, readme)
+    return re.sub(UPDATE_REG, stats_in_readme, readme)
 
 
 if __name__ == '__main__':
