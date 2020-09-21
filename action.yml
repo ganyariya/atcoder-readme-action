@@ -1,12 +1,15 @@
 name: 'Readme Action Template'
 author: ganariya
-description: 'Hello, this is template!'
+description: 'This is the template of the readme update action.'
 
 inputs:
   GH_TOKEN:
     description: 'GitHub access token with Repo scope'
     required: true
     default: ${{ github.token }}
+  USERNAME:
+    description: 'Your Account'
+    required: true
 
 runs:
   using: 'docker'
