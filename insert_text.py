@@ -8,7 +8,8 @@ result_to_color = {
     'CE': 'yellow',
     'IE': 'lightgrey',
     'OLE': 'yellow',
-    'MLE': 'yellow'
+    'MLE': 'yellow',
+    'RE': 'yellow'
 }
 
 
