@@ -47,7 +47,7 @@ if __name__ == '__main__':
         committer = InputGitAuthor('readme-bot', 'readme-bot@example.com')
         print(new_readme_text)
 
-        repo.update_file(path=readme_contents.path, message="Updated README by bot", content=new_readme_text, sha=readme_contents.sha, branch='master', committer=committer)
+        repo.update_file(path=readme_contents.path, message="Updated README by bot", content=new_readme_text, sha=readme_contents.sha, branch='main', committer=committer)
         print("Readme Updated!")
 
     except Exception as e:
