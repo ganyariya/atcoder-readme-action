@@ -47,6 +47,10 @@ if __name__ == '__main__':
         committer = InputGitAuthor('readme-bot', 'readme-bot@example.com')
         print(new_readme_text)
 
+        if old_readme_text == new_readme_text:
+            print("same readme text, so not commit")
+            exit(0)
+
         repo.update_file(path=readme_contents.path, message="Updated README by bot", content=new_readme_text, sha=readme_contents.sha, branch='main', committer=committer)
         print("Readme Updated!")
 
