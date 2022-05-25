@@ -16,7 +16,7 @@ parse==1.18.0
 pybadges==2.2.1
 pyee==7.0.4
 PyGithub==1.53
-PyJWT==1.7.1
+PyJWT==2.4.0
 pyppdf==0.0.12
 pyppeteer==0.2.2
 pyquery==1.4.1
